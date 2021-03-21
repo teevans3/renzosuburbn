@@ -1,0 +1,58 @@
+.Title, .TitleGlow {
+    width: 100vw;
+    height: auto;
+}
+
+.Title {
+    position: relative;
+    bottom: -100;
+    right: 0;
+    left: 0;
+    opacity: 1;
+    animation: regGlow 10s ease-in-out infinite alternate;
+}
+
+.TitleGlow {
+    position: absolute;
+    bottom: -100;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    animation: glowGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes regGlow {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0.75;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    75% {
+        opacity: 0.25;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes glowGlow {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.25;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    75% {
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 1;
+    }
+}

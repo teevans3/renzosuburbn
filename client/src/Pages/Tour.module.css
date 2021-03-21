@@ -1,0 +1,18 @@
+.TourTitle {
+    font-family: 'Audiowide', cursive;
+    font-size: 80px;
+    font-style: italic;
+    margin: 0;
+    font-weight: 900;
+    padding-bottom: 1vw;
+    background-color: black;
+    /* background-image: linear-gradient(#f3ec78, #400080); */
+    background-image: linear-gradient(white, #77dd77);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+    -webkit-text-stroke-width: 0.001em;
+    -webkit-text-stroke-color: black;
+  }

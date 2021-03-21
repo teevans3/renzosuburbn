@@ -1,0 +1,133 @@
+.Globe {
+    width: 60vw;
+    height: 60vw;
+    margin: auto;
+    -webkit-animation: rotatecircle 20s infinite linear;
+}
+@keyframes rotatecircle {
+    0% { -webkit-transform:rotate(0deg); }
+    100% { -webkit-transform:rotate(360deg); }
+}   
+
+.EnterGlobe {
+    animation: rotatecircle 10s infinite linear, grow 5s;
+    width: 20vw;
+    height: 20vw;
+  }
+@keyframes grow {
+  0% {
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(0.25);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  75% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+  .EnterGlobe:hover {
+    background: none !important;
+  }
+
+
+.LiveImage {
+  width: 199.40625px;
+  height: 279.375px;
+  position: fixed;
+  bottom: 0;
+  left: 2vw;
+  animation: float 6s ease-in-out infinite;
+  z-index: 10;
+}
+
+.TextBox {
+  width: 200.375px;
+  height: 97px;
+  position: fixed;
+  bottom: 220px;
+  animation: float 6s ease-in-out infinite;
+  z-index: 9;
+  left: 140px;
+}
+
+@keyframes float {
+	0% {
+		/* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */
+		transform: translatey(0px);
+	}
+	50% {
+		/* box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2); */
+		transform: translatey(-40px);
+	}
+	100% {
+		/* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */
+		transform: translatey(0px);
+	}
+}
+
+.SubscribeImage {
+  width: 173.875px;
+  height: 223.25px;
+  position: fixed;
+  bottom: 0;
+  right: 2vw;
+  z-index: 10;
+}
+
+.SpeechBubble {
+  position: fixed;
+  /* text-align: center; */
+	/* line-height: 1.4em; */
+	background-color: white;
+	border: 4px solid black;
+	border-radius: 30px;
+	padding: 20px;
+  right: 150px;
+  z-index: 10;
+  bottom: 180px;
+}
+
+.SpeechBubble:before, .SpeechBubble:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.SpeechBubble:before {
+  right: 36px;
+  bottom: -36px;
+  border: 18px solid;
+  border-color: black black transparent transparent;
+}
+
+.SpeechBubble:after {
+  right: 38px;
+  bottom: -30px;
+  border: 15px solid;
+  border-color: white white transparent transparent;
+
+}
+
+.Retro span {
+	font-family: 'Audiowide', cursive;
+	font-style: italic;
+	font-weight: 900;
+	background-color: black;
+	/* background-image: linear-gradient(#f3ec78, #400080); */
+	background-image: linear-gradient(white, #77dd77);
+	background-size: 100%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent; 
+	-moz-text-fill-color: transparent;
+	-webkit-text-stroke-width: 0.001em;
+	-webkit-text-stroke-color: black;
+  }
