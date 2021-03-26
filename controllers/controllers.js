@@ -10,14 +10,11 @@ mailchimp.setConfig({
 });
 
 const getTwitch = (req, res, next) => {
-    console.log(req.headers);
-    console.log("YOU HAVE MADE IT TO THE ROUTER! GETTING TWITCH INFO...")
-//     // Checks if Renzo is live when user visits page. Should we check this evry so often or...?
+     // Checks if Renzo is live when user visits page. Should we check this evry so often or...?
     axios.post(`https://id.twitch.tv/oauth2/token?client_id=${process.env.CLIENT_ID}&client_secret=${process.env.CLIENT_SECRET}&grant_type=client_credentials`,)
         .then(res => res.json())
         .then(data => {
         const access_token = data["access_token"];
-
         axios.post(`https://api.twitch.tv/helix/streams?user_login=renzosuburbn`, {
             headers: {
             'Client-ID': process.env.CLIENT_ID,
@@ -44,13 +41,8 @@ const getTwitch = (req, res, next) => {
 };
 
 const postEmail = (req, res, next) => {
-    console.log(req.headers);
-    const email = JSON.parse(JSON.stringify(req.body)).email;
-
-    console.log(email);
-    
     mailchimp.lists.addListMember(process.env.MAILCHIMP_LIST_ID, {
-      email_address: email,
+      email_address: JSON.parse(JSON.stringify(req.body)).email,
       status: 'subscribed'
     })
     .then(response => {

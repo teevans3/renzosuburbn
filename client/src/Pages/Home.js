@@ -82,24 +82,15 @@ const Home = (props) => {
 
         e.preventDefault();
 
-        const email = document.getElementById('email').value; 
-
-        // fetch('http://localhost:9000/postEmail', {
-        //     method: 'POST',
-        //     body: JSON.stringify({"email": email}),
-        //     headers: {
-        //         "Accept": "application/json",
-        //         "Content-Type": "application/json"
-        //       }
-        //  })
         axios.post('/api/v1/postEmail', {
-            email: email
+            email: document.getElementById('email').value
         })
         .then(res => {
           res.text()
             .then(data => {
                 // TODO
-                console.log(data);
+                props.setDisplaySubscribe(false);
+                setDisplaySubscribeForm(false);
             })
             .catch(err => {
               // TODO
@@ -110,12 +101,6 @@ const Home = (props) => {
           // TODO
           console.log(err);
         })
-
-
-        
-
-        props.setDisplaySubscribe(false);
-        setDisplaySubscribeForm(false);
     }
 
     let subscribePopup = null;

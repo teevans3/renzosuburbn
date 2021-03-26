@@ -70,11 +70,10 @@ function App() {
   // Check if Renzo is live on twitch
   useEffect(() => {
     // fetch('http://localhost:9000/getTwitch')
-    axios.get('/api/v1/getTwitch')
+    axios.post('/api/v1/getTwitch')
     .then(res => {
       res.text()
         .then(data => {
-          console.log(data);
           if (data === 'is live') {
             setIsLive(true);
           } else {
