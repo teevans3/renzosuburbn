@@ -5,7 +5,7 @@ const axios = require('axios');
 dotenv.config();
 
 mailchimp.setConfig({
-  apiKey: process.env.MAILCHIMP_API,
+  apiKey: `${process.env.MAILCHIMP_API}-us1`,
   server: 'us1'
 });
 
