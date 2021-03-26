@@ -67,11 +67,7 @@ function App() {
     }, 1)
   }, [])
 
-
-  // Retrieve data from back end
-  // DO THIS FOR API KEYS!! (make sure its still safe after we retrieve them)
-  // Also need to figure out... do we need two separate ports for when we host live??
-  // use backend to check if renzo is live when user visits site
+  // Check if Renzo is live on twitch
   useEffect(() => {
     // fetch('http://localhost:9000/getTwitch')
     axios.get('/api/v1/getTwitch')

@@ -139,7 +139,9 @@ const Home = (props) => {
         <div>
             <Grid container>
                 <Grid item sm={12}>
-                    <img src={NauseousSingleLogo} alt={`"${newMusic.title.toUpperCase()}"`} className={classes.SingleLogo}></img>
+                    <a href={newMusic.link} target="_blank" rel="noopener noreferrer">
+                        <img src={NauseousSingleLogo} alt={`"${newMusic.title.toUpperCase()}"`} className={classes.SingleLogo}></img>
+                    </a>
                 </Grid>
                 <Grid item sm={12} className={classes.NewSingleContainer}>
                     <Typography gutterBottom align='center'>
@@ -154,21 +156,6 @@ const Home = (props) => {
                             Enter your contact information to receive news on upcoming releases, shows, merch, and more.
                         </DialogContentText>
                         <form>
-                            {/* <TextField
-                                autoFocus
-                                margin="dense"
-                                id="firstName"
-                                label="First Name"
-                                fullWidth
-                                className={classes.EmailInput}
-                            />
-                            <TextField
-                                margin="dense"
-                                id="lastName"
-                                label="Last Name"
-                                fullWidth
-                                className={classes.EmailInput}
-                            /> */}
                             <TextField
                                 margin="dense"
                                 id="email"

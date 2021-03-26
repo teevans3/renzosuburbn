@@ -21,28 +21,21 @@ import T6back7 from './public/merch/T6back7.png';
 import T7 from './public/merch/T7.png';
 import T8 from './public/merch/T8.png';
 import T9back8 from './public/merch/T9back8.png';
-import RenzoSticker1 from './public/merch/RenzoSticker1.png';
-import RenzoSticker2 from './public/merch/RenzoSticker2.png';
-import RenzoSticker8 from './public/merch/RenzoSticker8.png';
-import RenzoSticker10 from './public/merch/RenzoSticker10.png';
-import SmileyRSSticker from './public/merch/SmileyRSSticker.png';
-import WorldBallSticker1 from './public/merch/WorldBallSticker1.png';
-import WorldBallSticker2 from './public/merch/WorldBallSticker2.png';
+import GlobieSticker from './public/merch/GlobieSticker.png';
+import MonstersUnderTheBedSticker from './public/merch/MonstersUnderTheBedSticker.png';
+import NauseousSodaSticker from './public/merch/NauseousSodaSticker.png';
+import RenzoSuburbnLogoSticker from './public/merch/RenzoSuburbnLogoSticker.png';
+import RSSmileySticker from './public/merch/RSSmileySticker.png';
 import TechnicianRenzo from './public/articles/TechnicianRenzo.png';
 import TechnicianDotwav from './public/articles/TechnicianDotwav.png';
-
-
-
-
-
-
 
 
 
 // New music for home page (either single or album)
 const newMusic = {
     title: 'Nauseous',
-    musicType: 'Single'
+    musicType: 'Single',
+    link: 'https://unitedmasters.com/m/6058e5446b55ac371bab484f'
 };
 
 const albums = [
@@ -208,6 +201,51 @@ const albums = [
 
 const merch = [
     {
+        title: '"RS Smiley" Sticker',
+        price: '5.00',
+        sizes: [],
+        imageFront: RSSmileySticker,
+        imageBack: RSSmileySticker,
+        soldOut: false,
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSf48w30POm-5ANWq3RUO4yHIoE2KJaWs19lrn1STOXFpwjg1A/viewform?vc=0&c=0&w=1&flr=0&gxids=7628',
+    },
+    {
+        title: '"Nauseous Soda" Sticker',
+        price: '3.00',
+        sizes: [],
+        imageFront: NauseousSodaSticker,
+        imageBack: NauseousSodaSticker,
+        soldOut: false,
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSf48w30POm-5ANWq3RUO4yHIoE2KJaWs19lrn1STOXFpwjg1A/viewform?vc=0&c=0&w=1&flr=0&gxids=7628',
+    },
+    {
+        title: '"Globie" Sticker (designed by DOOMSDAY SOOIRE)',
+        price: '4.00',
+        sizes: [],
+        imageFront: GlobieSticker,
+        imageBack: GlobieSticker,
+        soldOut: false,
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSf48w30POm-5ANWq3RUO4yHIoE2KJaWs19lrn1STOXFpwjg1A/viewform?vc=0&c=0&w=1&flr=0&gxids=7628',
+    },
+    {
+        title: '"Monsters Under The Bed" Sticker (designed by DOOMSDAY SOOIRE)',
+        price: '4.00',
+        sizes: [],
+        imageFront: MonstersUnderTheBedSticker,
+        imageBack: MonstersUnderTheBedSticker,
+        soldOut: false,
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSf48w30POm-5ANWq3RUO4yHIoE2KJaWs19lrn1STOXFpwjg1A/viewform?vc=0&c=0&w=1&flr=0&gxids=7628',
+    },
+    {
+        title: '"Renzo Suburbn Logo" Sticker',
+        price: '5.00',
+        sizes: [],
+        imageFront: RenzoSuburbnLogoSticker,
+        imageBack: RenzoSuburbnLogoSticker,
+        soldOut: false,
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSf48w30POm-5ANWq3RUO4yHIoE2KJaWs19lrn1STOXFpwjg1A/viewform?vc=0&c=0&w=1&flr=0&gxids=7628',
+    },
+    {
         title: 'Smiley T-Shirt 1',
         price: '59.99',
         sizes: ['XS', 'SM', 'MED', 'LG', 'XL'],
@@ -222,7 +260,7 @@ const merch = [
         sizes: ['XS', 'SM', 'MED', 'LG', 'XL'],
         imageFront: T2,
         imageBack: T3back1245,
-        soldOut: true,
+        soldOut: false,
         link: 'https://docs.google.com/forms/d/e/1FAIpQLSf48w30POm-5ANWq3RUO4yHIoE2KJaWs19lrn1STOXFpwjg1A/viewform?vc=0&c=0&w=1&flr=0&gxids=7628',
     },
     {
@@ -261,120 +299,19 @@ const merch = [
         soldOut: false,
         link: 'https://docs.google.com/forms/d/e/1FAIpQLSf48w30POm-5ANWq3RUO4yHIoE2KJaWs19lrn1STOXFpwjg1A/viewform?vc=0&c=0&w=1&flr=0&gxids=7628',
     },
-    {
-        title: 'Renzo Sticker 1',
-        price: '5.00',
-        sizes: [],
-        imageFront: RenzoSticker1,
-        imageBack: RenzoSticker1,
-        soldOut: false,
-        link: 'https://docs.google.com/forms/d/e/1FAIpQLSf48w30POm-5ANWq3RUO4yHIoE2KJaWs19lrn1STOXFpwjg1A/viewform?vc=0&c=0&w=1&flr=0&gxids=7628',
-    },
-    {
-        title: 'Renzo Sticker 2',
-        price: '5.00',
-        sizes: [],
-        imageFront: RenzoSticker2,
-        imageBack: RenzoSticker2,
-        soldOut: false,
-        link: 'https://docs.google.com/forms/d/e/1FAIpQLSf48w30POm-5ANWq3RUO4yHIoE2KJaWs19lrn1STOXFpwjg1A/viewform?vc=0&c=0&w=1&flr=0&gxids=7628',
-    },
-    {
-        title: 'Renzo Sticker 3',
-        price: '5.00',
-        sizes: [],
-        imageFront: RenzoSticker8,
-        imageBack: RenzoSticker8,
-        soldOut: false,
-        link: 'https://docs.google.com/forms/d/e/1FAIpQLSf48w30POm-5ANWq3RUO4yHIoE2KJaWs19lrn1STOXFpwjg1A/viewform?vc=0&c=0&w=1&flr=0&gxids=7628',
-    },
-    {
-        title: 'Renzo Sticker 4',
-        price: '5.00',
-        sizes: [],
-        imageFront: RenzoSticker10,
-        imageBack: RenzoSticker10,
-        soldOut: false,
-        link: 'https://docs.google.com/forms/d/e/1FAIpQLSf48w30POm-5ANWq3RUO4yHIoE2KJaWs19lrn1STOXFpwjg1A/viewform?vc=0&c=0&w=1&flr=0&gxids=7628',
-    },
-    {
-        title: 'Smiley RS Sticker',
-        price: '5.00',
-        sizes: [],
-        imageFront: SmileyRSSticker,
-        imageBack: SmileyRSSticker,
-        soldOut: false,
-        link: 'https://docs.google.com/forms/d/e/1FAIpQLSf48w30POm-5ANWq3RUO4yHIoE2KJaWs19lrn1STOXFpwjg1A/viewform?vc=0&c=0&w=1&flr=0&gxids=7628',
-    },
-    {
-        title: 'Smiley World Sticker 1',
-        price: '5.00',
-        sizes: [],
-        imageFront: WorldBallSticker1,
-        imageBack: WorldBallSticker1,
-        soldOut: false,
-        link: 'https://docs.google.com/forms/d/e/1FAIpQLSf48w30POm-5ANWq3RUO4yHIoE2KJaWs19lrn1STOXFpwjg1A/viewform?vc=0&c=0&w=1&flr=0&gxids=7628',
-    },
-    {
-        title: 'Smiley World Sticker 2',
-        price: '5.00',
-        sizes: [],
-        imageFront: WorldBallSticker2,
-        imageBack: WorldBallSticker2,
-        soldOut: false,
-        link: 'https://docs.google.com/forms/d/e/1FAIpQLSf48w30POm-5ANWq3RUO4yHIoE2KJaWs19lrn1STOXFpwjg1A/viewform?vc=0&c=0&w=1&flr=0&gxids=7628',
-    },
 ];
 
-const tours = [
-    {  
-        venue: 'Kings',
-        city: 'Raleigh',
-        state: 'NC',
-        country: 'USA',
-        date: new Date(2021, 2, 20),
-        soldOut: false
-    },
-    {  
-        venue: 'Cat\'s Cradle',
-        city: 'Carrboro',
-        state: 'NC',
-        country: 'USA',
-        date: new Date(2021, 2, 27),
-        soldOut: true
-    },
-    {  
-        venue: 'Imurj',
-        city: 'Raleigh',
-        state: 'NC',
-        country: 'USA',
-        date: new Date(2021, 3, 12),
-        soldOut: false
-    },    {  
-        venue: 'Kings',
-        city: 'Raleigh',
-        state: 'NC',
-        country: 'USA',
-        date: new Date(2021, 3, 22),
-        soldOut: true
-    },
-    {  
-        venue: 'Cat\'s Cradle',
-        city: 'Carrboro',
-        state: 'NC',
-        country: 'USA',
-        date: new Date(2021, 4, 1),
-        soldOut: false
-    },
-    {  
-        venue: 'Imurj',
-        city: 'Raleigh',
-        state: 'NC',
-        country: 'USA',
-        date: new Date(2021, 4, 17),
-        soldOut: false
-    },
-]
+// const tours = [
+//     {  
+//         venue: 'Cat\'s Cradle',
+//         city: 'Carrboro',
+//         state: 'NC',
+//         country: 'USA',
+//         date: new Date(2021, 4, 1),
+//         soldOut: false
+//     },
+// ]
+const tours = [];
 
 
 const videos = [

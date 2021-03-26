@@ -6,6 +6,12 @@ import RenzoGlogoBig from '../public/assets/RenzoGlogoBig.png';
 import extClasses from './About.module.css';
 
 const useStyles = makeStyles((theme) => ({
+    AboutTitle: {
+        height: '100%',
+        position: 'relative',
+        top: '0',
+        bottom: '0',
+    },
     AboutContainer: {
         '& p': {
             fontFamily: 'Imbue, serif',
@@ -41,7 +47,7 @@ const About = () => {
     const classes = useStyles();
     return (
         <Grid container>
-            <Grid item xs={12} id="about">
+            <Grid item xs={12} id="about" className={classes.AboutTitle}>
                 <img src={RenzoLogoBig} alt="Renzo Suburbn" className={extClasses.Title}></img>
                 <img src={RenzoGlogoBig} alt="Renzo Suburbn" className={extClasses.TitleGlow}></img>
             </Grid>
