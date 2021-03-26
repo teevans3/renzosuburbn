@@ -89,8 +89,7 @@ const Home = (props) => {
           res.text()
             .then(data => {
                 // TODO
-                props.setDisplaySubscribe(false);
-                setDisplaySubscribeForm(false);
+                console.log("Email submitted for subscription");
             })
             .catch(err => {
               // TODO
@@ -101,6 +100,8 @@ const Home = (props) => {
           // TODO
           console.log(err);
         })
+        props.setDisplaySubscribe(false);
+        setDisplaySubscribeForm(false);
     }
 
     let subscribePopup = null;

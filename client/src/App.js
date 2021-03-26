@@ -18,6 +18,9 @@ import TextBox from './public/assets/TextBox.png';
 import EnterButton from './public/assets/EnterButton.png';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import axios from 'axios';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 
 const useStyles = makeStyles({
@@ -69,14 +72,15 @@ function App() {
 
   // Check if Renzo is live on twitch
   useEffect(() => {
-    // fetch('http://localhost:9000/getTwitch')
-    axios.post('/api/v1/getTwitch')
+    axios.post('/api/v1/postTwitch')
     .then(res => {
       res.text()
         .then(data => {
           if (data === 'is live') {
+            console.log("Renzo is live!");
             setIsLive(true);
           } else {
+            console.log("Renzo is not live.");
             setIsLive(false);
           }
         })

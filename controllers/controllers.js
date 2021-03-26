@@ -9,35 +9,34 @@ mailchimp.setConfig({
   server: 'us1'
 });
 
-const getTwitch = (req, res, next) => {
-     // Checks if Renzo is live when user visits page. Should we check this evry so often or...?
-    axios.post(`https://id.twitch.tv/oauth2/token?client_id=${process.env.CLIENT_ID}&client_secret=${process.env.CLIENT_SECRET}&grant_type=client_credentials`,)
-        .then(res => res.json())
-        .then(data => {
-        const access_token = data["access_token"];
-        axios.post(`https://api.twitch.tv/helix/streams?user_login=renzosuburbn`, {
+const postTwitch = (req, res, next) => {
+    // Checks if Renzo is live when user visits page. Should we check this evry so often or...?
+    axios.post(`https://id.twitch.tv/oauth2/token?client_id=${process.env.CLIENT_ID}&client_secret=${process.env.CLIENT_SECRET}&grant_type=client_credentials`)
+    .then(data => {
+        console.log('retrieving access token...');
+        axios.get(`https://api.twitch.tv/helix/streams?user_login=renzosuburbn`, {
             headers: {
             'Client-ID': process.env.CLIENT_ID,
-            'Authorization': `Bearer ${access_token}`
+            'Authorization': `Bearer ${data.data.access_token}`
             }
         })
-            .then(response => response.json())
-            .then(data => {
+        .then(data => {
+            console.log('checking if renzo is live...');
             if (data.data.length > 0) {
                 res.send('is live');
             } else {
                 res.send('not live');
             }
-            })
-            .catch(err => {
-            // TODO
-            console.log(err);
-            });
         })
         .catch(err => {
         // TODO
         console.log(err);
-        })
+        });
+    })
+    .catch(err => {
+    // TODO
+    console.log(err);
+    })
 };
 
 const postEmail = (req, res, next) => {
@@ -45,10 +44,7 @@ const postEmail = (req, res, next) => {
       email_address: JSON.parse(JSON.stringify(req.body)).email,
       status: 'subscribed'
     })
-    .then(response => {
-      console.log(response);
-    })
 }
 
-module.exports.getTwitch = getTwitch;
+module.exports.postTwitch = postTwitch;
 module.exports.postEmail = postEmail;
