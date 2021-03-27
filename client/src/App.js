@@ -41,7 +41,7 @@ const useStyles = makeStyles({
     objectFit: 'fill'
   },
   MainBackground: {
-    background: 'linear-gradient(white 120px, 180px, pink 240px)',
+    background: 'linear-gradient(white 120px, 180px, green 240px)',
     top: '64px',
     bottom: '0',
     paddingBottom: '0',
