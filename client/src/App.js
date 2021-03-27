@@ -67,7 +67,7 @@ function App() {
     // document.getElementById('visualizer').play();
     setTimeout(() => {
       setDisplayEnter(true);
-    }, 1)
+    }, 10000)
   }, [])
 
   // Check if Renzo is live on twitch

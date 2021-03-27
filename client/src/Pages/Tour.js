@@ -61,9 +61,6 @@ const useStyles = makeStyles((theme) => ({
         },
         fontFamily: '"Special Elite", cursive',
     },
-    Red: {
-        color: 'red',
-    },
     SoldOutContainer: {
         height: '4vw',
         transform: 'scale(1)',
@@ -87,7 +84,8 @@ const useStyles = makeStyles((theme) => ({
         padding: '0 8px 0 8px',
         position: 'relative',
         backgroundColor: 'pink',
-        zIndex: '3'
+        zIndex: '3',
+        color: 'red',
     },
 }));
 
@@ -102,9 +100,9 @@ const Tour = () => {
         return (
             <TableRow key={tour.date} className={classes.TableRow}>
                 <TableCell>
-                    <Typography display="inline" className={classes.TableFont + ' ' + classes.Red}>{tour}</Typography>
+                    <Typography display="inline" className={classes.TableFont}>{tour}</Typography>
                     <Typography display="inline" className={classes.Separator}>☺</Typography>
-                    <Typography display="inline" className={classes.TableFont + ' ' + classes.Red}>{tour}</Typography>
+                    <Typography display="inline" className={classes.TableFont}>{tour}</Typography>
                 </TableCell>
                 <TableCell className={classes.TableFont  + ' ' + classes.TBA} align="right">{tour}</TableCell>
             </TableRow>
@@ -121,7 +119,7 @@ const Tour = () => {
                         <Typography display="inline" className={classes.TableFont}>{tour.venue}</Typography>
                     </TableCell>
                     <TableCell>
-                        {tour.soldOut ? <Typography display="inline" className={classes.SoldOut + ' ' + classes.Red}>SOLD OUT</Typography> : <div></div>}
+                        {tour.soldOut ? <Typography display="inline" className={classes.SoldOut}>SOLD OUT</Typography> : <div></div>}
                     </TableCell>
                     <TableCell align="right">
                         <Typography className={classes.TableFont}>{getDate(tour.date)}</Typography>
