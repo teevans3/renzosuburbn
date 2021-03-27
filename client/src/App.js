@@ -73,21 +73,14 @@ function App() {
   // Check if Renzo is live on twitch
   useEffect(() => {
     axios.post('/api/v1/postTwitch')
-    .then(res => {
-      res.text()
-        .then(data => {
-          if (data === 'is live') {
-            console.log("Renzo is live!");
-            setIsLive(true);
-          } else {
-            console.log("Renzo is not live.");
-            setIsLive(false);
-          }
-        })
-        .catch(err => {
-          // TODO
-          console.log(err);
-        })
+    .then(data => {
+        if (data === 'is live') {
+          console.log("Renzo is live!");
+          setIsLive(true);
+        } else {
+          console.log("Renzo is not live.");
+          setIsLive(false);
+        }
     })
     .catch(err => {
       // TODO
