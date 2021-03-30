@@ -129,7 +129,7 @@ const Home = (props) => {
                         <img src={NauseousSingleLogo} alt={`"${newMusic.title.toUpperCase()}"`} className={classes.SingleLogo}></img>
                     </a>
                 </Grid>
-                <Grid item sm={12} className={classes.NewSingleContainer}>
+                <Grid item sm={12} className={classes.NewSingleContainer} gutterBottom>
                     <Typography gutterBottom align='center'>
                         {`NEW ${newMusic.musicType}, OUT EVERYWHERE`.toUpperCase()}
                     </Typography>

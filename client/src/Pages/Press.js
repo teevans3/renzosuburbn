@@ -62,7 +62,7 @@ const Press = () => {
             <Grid md={10} sm={12} item container >
                 {articles.map(article => {
                     return (
-                        <Grid item sm={12} md={6} lg={4} container className={classes.CardItem}>
+                        <Grid item sm={12} md={6} lg={4} container className={classes.CardItem} key={article.link}>
                             <Paper className={classes.CardBackdrop} elevation={24} square >
                             <Card className={classes.Card} square component={Link} href={article.link} target="_blank">
                                 <Grid item sm={12}>

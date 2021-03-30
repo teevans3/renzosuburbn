@@ -98,7 +98,7 @@ const Tour = () => {
     // reorder tours by date
     let tourDisplay = toursTBA.map((tour, index) => {
         return (
-            <TableRow key={tour.date} className={classes.TableRow}>
+            <TableRow key={index} className={classes.TableRow}>
                 <TableCell>
                     <Typography display="inline" className={classes.TableFont}>{tour}</Typography>
                     <Typography display="inline" className={classes.Separator}>☺</Typography>

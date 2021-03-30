@@ -61,9 +61,8 @@ const NavDrawer = (props) => {
             </ListItem>
             {props.navItems.map(item => {
                 return (
-                    <ListItem>
+                    <ListItem key={`${item.name}-navdrawer`}>
                         <Typography
-                            key={`${item.name}-navdrawer`}
                             variant="h6"
                             to={item.path}
                             className={classes.LinkText}

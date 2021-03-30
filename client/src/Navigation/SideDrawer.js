@@ -29,43 +29,58 @@ const SideDrawer = () => {
 
     const classes = useStyles();
 
+    const socialItems = [
+        {
+            social: 'Apple Music',
+            link: 'https://music.apple.com/us/artist/renzo-suburbn/1255335971',
+            icon: <AppleIcon className={classes.Icon}></AppleIcon>
+        },
+        {
+            social: 'Spotify',
+            link: 'https://open.spotify.com/artist/69qG49IaZkjleL2vXwdTuA',
+            icon: <img src={SpotifyLogo} className={classes.CustomIcon} alt="Spotify Icon"/>
+        },
+        {
+            social: 'Twitch',
+            link: 'https://www.twitch.tv/renzosuburbn',
+            icon: <img src={TwitchLogo} className={classes.CustomIcon} alt="Twitch Icon"/>
+        },
+        {
+            social: 'YouTube',
+            link: 'https://www.youtube.com/channel/UCg7w3RP6lwFlmVttala7h_w',
+            icon: <YouTubeIcon className={classes.Icon}></YouTubeIcon>
+        },
+        {
+            social: 'Instagram',
+            link: 'https://www.instagram.com/renzosuburbn/',
+            icon: <InstagramIcon className={classes.Icon}></InstagramIcon>
+        },
+        {
+            social: 'Twitter',
+            link: 'https://twitter.com/renzosuburbn',
+            icon: <TwitterIcon className={classes.Icon}></TwitterIcon>
+        },
+        {
+            social: 'Facebook',
+            link: 'https://www.facebook.com/renzosuburbn',
+            icon: <FacebookIcon className={classes.Icon}></FacebookIcon>
+        },
+
+    ]
+
     return (
         <List>
-            <ListItem>
-                <Link href="https://music.apple.com/us/artist/renzo-suburbn/1255335971" target="_blank">
-                    <AppleIcon className={classes.Icon}/>
-                </Link>
-            </ListItem>
-            <ListItem>
-                <Link href="https://open.spotify.com/artist/69qG49IaZkjleL2vXwdTuA" target="_blank">
-                    <img src={SpotifyLogo} className={classes.CustomIcon} alt="Spotify Icon"/>
-                </Link>
-            </ListItem>
-            <ListItem>
-                <Link href="https://www.twitch.tv/renzosuburbn" target="_blank">
-                    <img src={TwitchLogo} className={classes.CustomIcon} alt="Twitch Icon"/>
-                </Link>
-            </ListItem>
-            <ListItem>
-                <Link href="https://www.youtube.com/channel/UCg7w3RP6lwFlmVttala7h_w" target="_blank">
-                    <YouTubeIcon className={classes.Icon}/>
-                </Link>
-            </ListItem>
-            <ListItem>
-                <Link href="https://www.instagram.com/renzosuburbn/" target="_blank">
-                    <InstagramIcon className={classes.Icon}/>
-                </Link>
-            </ListItem>
-            <ListItem>
-                <Link href="https://twitter.com/renzosuburbn" target="_blank">
-                    <TwitterIcon className={classes.Icon}/>
-                </Link>
-            </ListItem>
-            <ListItem>
-                <Link href="https://www.facebook.com/renzosuburbn"  target="_blank">
-                    <FacebookIcon className={classes.Icon}/>
-                </Link>
-            </ListItem>
+            {
+            socialItems.map(item => {
+                return (
+                    <ListItem key={item.social}>
+                        <Link href={item.link} target="_blank">
+                            {item.icon}
+                        </Link>
+                    </ListItem>
+                );
+            })
+            }
         </List>
     )
 }

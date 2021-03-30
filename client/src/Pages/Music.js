@@ -105,7 +105,7 @@ const Music = () => {
                                                         <TableBody>
                                                             {album.tracks.map(song => {
                                                                 return (
-                                                                    <TableRow>
+                                                                    <TableRow key={album.title + '-' + song}>
                                                                         <TableCell className={extClasses.GlitchWrapper + ' ' + classes.SongText}>
                                                                             <Typography className={extClasses.glitch} data-glitch={song}>{song}</Typography>
                                                                         </TableCell>

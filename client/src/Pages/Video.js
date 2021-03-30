@@ -40,8 +40,8 @@ const Videos = () => {
             <Grid item sm={12} md={10} container >
                 {videos.map((vid, index) => {
                     return (
-                        <Grid item component={Paper} elevation={0} sm={12} md={index === 0 ? 12 : 6} className={classes.VideoContainer} align="center">
-                                <iframe title={vid} className={index === 0 ? classes.Video + ' ' + classes.Primary : classes.Video} src={index === 0 ? vid + '?autoplay=1' : vid} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <Grid item component={Paper} elevation={0} key={vid} sm={12} md={index === 0 ? 12 : 6} className={classes.VideoContainer} align="center">
+                                <iframe title={vid} className={index === 0 ? classes.Video + ' ' + classes.Primary : classes.Video} src={index === 0 ? vid + '?autoplay=1' : vid} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         </Grid>
                     );
                 })}

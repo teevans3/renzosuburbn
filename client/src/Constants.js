@@ -40,6 +40,17 @@ const newMusic = {
 
 const albums = [
     {
+        title: 'Nauseous',
+        musicType: 'Single',
+        image: '',
+        tracks: [
+            'Nauseous',
+        ],
+        id: '0',
+        releaseDate: new Date(2020, 4, 9),
+        link: 'https://unitedmasters.com/m/6058e5446b55ac371bab484f',
+    },
+    {
         title: 'Kabuki Punk',
         musicType: 'Album',
         image: KabukiPunk,

@@ -76,7 +76,7 @@ const Merch = () => {
             <Grid item sm={10} container spacing={8} className={classes.NoBottom} >
                 {merch.map(item => {
                     return (
-                        <Grid item sm={12} md={4}>
+                        <Grid item sm={12} md={4} key={item.title + '-' + item.price}>
                             <Card color="secondary" className={classes.Card}>
                                 <div className={classes.ImageContainer}>
                                     <CardMedia className={extClasses.ItemImgFront} image={item.imageFront} component={Link} href={item.link} target="_blank" loading="lazy"/>
