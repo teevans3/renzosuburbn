@@ -1,6 +1,8 @@
 import React from 'react';
-import {Grid, Hidden, Paper} from '@material-ui/core';
-import {makeStyles} from '@material-ui/core/styles';
+
+import { Grid, Hidden, Paper } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
 import {videos} from '../Constants';
 
 const useStyles = makeStyles(theme => ({
@@ -27,7 +29,6 @@ const useStyles = makeStyles(theme => ({
         }
     },
 }))
-
 
 const Videos = () => {
     const classes = useStyles();

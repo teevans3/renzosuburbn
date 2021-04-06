@@ -1,11 +1,12 @@
 import React from 'react';
-import {Typography, Grid, Link, Paper} from '@material-ui/core';
-import {makeStyles} from '@material-ui/core/styles';
-import {articles} from '../Constants.js';
+
+import { Typography, Grid, Link, Paper } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 
+import {articles} from '../Constants.js';
 
 const useStyles = makeStyles((theme) => ({
     CardItem: {

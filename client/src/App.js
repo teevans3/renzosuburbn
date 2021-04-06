@@ -1,5 +1,13 @@
 import './App.css';
 import React, {useState, useEffect} from 'react';
+
+import {Button, Grid, Link, Hidden} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import { useTheme } from '@material-ui/core/styles';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import { useBeforeunload } from 'react-beforeunload';
+import axios from 'axios';
+
 import Navbar from './Navigation/Navbar';
 import Home from './Pages/Home';
 import Music from './Pages/Music';
@@ -7,21 +15,11 @@ import Closet from './Pages/Closet';
 import Tour from './Pages/Tour';
 import Videos from './Pages/Video';
 import Press from './Pages/Press';
-import {Button, Grid, Link, Hidden} from '@material-ui/core';
-import {makeStyles} from '@material-ui/core/styles';
-import { useBeforeunload } from 'react-beforeunload';
-import { useTheme } from '@material-ui/core/styles';
-import extClasses from './Pages/Home.module.css';
 import Visualizer from './public/videos/Visualizer.mp4';
 import Nightmare from './public/assets/Nightmare.png';
 import TextBox from './public/assets/TextBox.png';
 import EnterButton from './public/assets/EnterButton.png';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import axios from 'axios';
-import dotenv from 'dotenv';
-
-dotenv.config();
-
+import extClasses from './css/Home.module.css';
 
 const useStyles = makeStyles({
   Button: {
@@ -57,6 +55,7 @@ function App() {
   const [isLive, setIsLive] = useState(false);
   const [displayEnter, setDisplayEnter] = useState(false);
   const [displaySubscribe, setDisplaySubscribe] = useState(true);
+  const [error, setError] = useState(false);
 
   const theme = useTheme();
   const classes = useStyles(theme);
@@ -64,7 +63,6 @@ function App() {
    // Wait 10 seconds for visualizer to play, then allow user to enter site via enter button
    useEffect(() => {
     localStorage.setItem('firstTime', false)
-    // document.getElementById('visualizer').play();
     setTimeout(() => {
       setDisplayEnter(true);
     }, 10000)
@@ -75,23 +73,19 @@ function App() {
     axios.post('/api/v1/postTwitch')
     .then(data => {
         if (data === 'is live') {
-          console.log("Renzo is live!");
           setIsLive(true);
         } else {
-          console.log("Renzo is not live.");
           setIsLive(false);
-        }
+        };
     })
     .catch(err => {
       // TODO
       console.log(err);
-    })
-
+    });
   }, [])
 
-
+  // If user leaves website, play visualizer again next time they return
   useBeforeunload(localStorage.removeItem('firstTime'));
-
 
   let display = (
       <div className={`App ${classes.MainBackground}`}>
@@ -105,7 +99,7 @@ function App() {
               <Route path="/press" component={Press} />
               <Route path="/#about" component={Home} />
               <Route path="/" render={() => (
-                  <Home displaySubscribe={displaySubscribe} setDisplaySubscribe={() => setDisplaySubscribe()} />
+                  <Home displaySubscribe={displaySubscribe} setDisplaySubscribe={() => setDisplaySubscribe()} error={error} setError={setError}/>
               )}/>
             </Switch>
           </BrowserRouter>

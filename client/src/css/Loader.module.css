@@ -1,0 +1,48 @@
+/* Loader from https://projects.lukehaas.me/css-loaders/ */
+
+.Loader,
+.Loader:after {
+  border-radius: 50%;
+  width: 7em;
+  height: 7em;
+}
+.Loader {
+  font-size: 20px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  /* margin-top: 20%; */
+  margin-left: -4.5em;
+  margin-top: -4.5em;
+  z-index: 20;
+  /* text-indent: -9999em; */
+  border-top: 1.6em solid white;
+  border-right: 1.6em solid white;
+  border-bottom: 1.6em solid white;
+  border-left: 1.6em solid #77dd77;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

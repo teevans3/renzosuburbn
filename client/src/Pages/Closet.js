@@ -1,15 +1,14 @@
 import React from 'react';
-import {merch} from '../Constants.js';
+
+import { Typography, Grid, Link, Paper } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import {Typography, Grid, Link, Paper} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import extClasses from './Closet.module.css';
 import { useTheme } from '@material-ui/core/styles';
 
-
-
+import {merch} from '../Constants.js';
+import extClasses from '../css/Closet.module.css';
 
 const useStyles = makeStyles(theme => ({
     NoBottom: {
@@ -64,7 +63,6 @@ const useStyles = makeStyles(theme => ({
         fontFamily: 'Imbue, serif',
     }
 }));
-
 
 const Merch = () => {
     const theme = useTheme();

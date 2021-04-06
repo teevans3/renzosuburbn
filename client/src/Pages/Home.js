@@ -1,21 +1,22 @@
 import React, {useState} from 'react';
-import {Typography, Grid, Button, TextField, Hidden, Paper} from '@material-ui/core';
-import extClasses from './Home.module.css';
-import {makeStyles} from '@material-ui/core/styles'
-import About from './About';
-import {newMusic} from '../Constants';
-import RenzoOne from '../public/assets/RenzoOne.png';
+
+import { Typography, Grid, Button, TextField, Hidden, Paper } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles'
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import Globe from '../public/assets/Globe.png';
-import NauseousSingleLogo from '../public/assets/NauseousSingleLogo.png';
-import * as dotenv from 'dotenv';
 import axios from 'axios';
 
-dotenv.config();
-
+import About from './About';
+import Error from '../UI/Error/Error';
+import Loader from '../UI/Loader/Loader';
+import {newMusic} from '../Constants';
+import {validateEmail} from '../helpers';
+import Globe from '../public/assets/Globe.png';
+import NauseousSingleLogo from '../public/assets/NauseousSingleLogo.png';
+import RenzoOne from '../public/assets/RenzoOne.png';
+import extClasses from '../css/Home.module.css';
 
 const useStyles = makeStyles(theme => ({
     SingleLogo: {
@@ -58,9 +59,11 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Home = (props) => {
-    const classes = useStyles();
-
     const [displaySubscribeForm, setDisplaySubscribeForm] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [emailError, setEmailError] = useState(false);
+
+    const classes = useStyles();
 
     const closePopup = () => {
         props.setDisplaySubscribe(false);
@@ -78,26 +81,37 @@ const Home = (props) => {
 
     async function submitEmail(e) {
 
-        // TODO: validate form
-
         e.preventDefault();
+        setLoading(true);
+
+        const email = document.getElementById('email').value;
+        if (!validateEmail(email)) {
+            console.log('email is not valid!');
+            setEmailError(true);
+            return;
+        };
 
         axios.post('/api/v1/postEmail', {
-            email: document.getElementById('email').value
+            email: email
         })
         .then(res => {
           res.text()
             .then(data => {
                 // TODO
                 console.log("Email submitted for subscription");
+                setLoading(false);
             })
             .catch(err => {
               // TODO
+              props.setError(true);
+              setLoading(false);
               console.log(err);
             })
         })
         .catch(err => {
           // TODO
+          props.setError(true);
+          setLoading(false);
           console.log(err);
         })
         props.setDisplaySubscribe(false);
@@ -124,6 +138,7 @@ const Home = (props) => {
     return (
         <div>
             <Grid container>
+                {loading ? <Loader /> : null}
                 <Grid item sm={12}>
                     <a href={newMusic.link} target="_blank" rel="noopener noreferrer">
                         <img src={NauseousSingleLogo} alt={`"${newMusic.title.toUpperCase()}"`} className={classes.SingleLogo}></img>
@@ -148,19 +163,22 @@ const Home = (props) => {
                                 label="Email Address"
                                 type="email"
                                 fullWidth
+                                error={emailError}
+                                helperText={emailError ? "Enter a valid email address." : null}
+                                variant="outlined"
                                 className={classes.EmailInput}
                             />
                             <Button onClick={(e) => submitEmail(e)} className={classes.SubscribeButton + ' ' + extClasses.Retro} component={Paper} elevation={12} style={{justifyContent: 'center'}}>Subscribe</Button>
                         </form>
                     </DialogContent>
                 </Dialog>
+                {props.error ? <Error setError={props.setError} /> : null}
                 <Grid container>
                     <img className={extClasses.Globe} src={Globe} alt="Renzo Globe Logo"></img>
                 </Grid>
             </Grid>
             <About id="about"/>
         </div>
-
     );
 }
 

@@ -1,15 +1,17 @@
 import React from 'react';
-import {tours} from '../Constants.js';
+
+import { Typography, Grid, Paper } from '@material-ui/core';
+import { makeStyles, withStyles } from '@material-ui/core';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import MuiTableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableRow from '@material-ui/core/TableRow';
-import {Typography, Grid, Paper} from '@material-ui/core';
-import {getDate} from '../helpers.js';
-import {makeStyles, withStyles} from '@material-ui/core';
+
+import { tours } from '../Constants.js';
+import { getDate } from '../helpers.js';
 import RenzoLaying from '../public/assets/RenzoLaying.png';
-import extClasses from './Tour.module.css';
+import extClasses from '../css/Tour.module.css';
 
 const TableCell = withStyles({
     root: {
@@ -95,7 +97,6 @@ const Tour = () => {
 
     const toursTBA = ['TBA', 'TBA', 'TBA', 'TBA', 'TBA', 'TBA'];
     
-    // reorder tours by date
     let tourDisplay = toursTBA.map((tour, index) => {
         return (
             <TableRow key={index} className={classes.TableRow}>

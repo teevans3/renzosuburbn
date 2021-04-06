@@ -1,13 +1,14 @@
 import React from 'react';
+
 import { Link, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import { NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+
 import RenzoLogo from '../public/assets/RenzoLogo.png';
 import RenzoGlogo from '../public/assets/RenzoGlogo.png';
-
 
 const useStyles = makeStyles({
     HomeLogo: {
@@ -48,7 +49,6 @@ const useStyles = makeStyles({
 });
 
 const NavDrawer = (props) => {
-
     const classes = useStyles();
 
     const AboutFunct = () => {

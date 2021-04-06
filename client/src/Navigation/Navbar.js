@@ -1,15 +1,17 @@
 import React, {useState} from 'react';
-import SideDrawer from './SideDrawer';
+
 import { AppBar, Toolbar, Typography, Grid, Drawer, Paper, Hidden} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { NavLink } from 'react-router-dom';
-import extClasses from './Navbar.module.css';
 import MenuIcon from '@material-ui/icons/Menu';
+import { NavLink } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+
+import SideDrawer from './SideDrawer';
 import NavDrawer from './NavDrawer';
 import RenzoLogo from '../public/assets/RenzoLogo.png';
 import RenzoGlogo from '../public/assets/RenzoGlogo.png';
 import CheckerBoard from '../public/assets/CheckerBoard.jpg';
-import { HashLink } from 'react-router-hash-link';
+import extClasses from '../css/Navbar.module.css';
 
 const useStyles = makeStyles((theme) => ({
     NavBar: {
@@ -102,12 +104,9 @@ const Navbar = () => {
         setNavDrawer(!navDrawer);
     };
 
-    // Need this function to hide font when hovered over 
-    // (cant do it in css because we can't access elements above with hover)
     const hoverEffectOn = (navId) => {
         document.getElementById(navId).style.color = 'black';
         document.getElementById(navId).style.textShadow = '1px 1px black';
-
     };
 
     const hoverEffectOff = (navId) => {

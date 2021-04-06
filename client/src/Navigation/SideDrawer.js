@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -6,11 +7,11 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import AppleIcon from '@material-ui/icons/Apple';
-import SpotifyLogo from '../public/social/SpotifyLogo.png';
-import TwitchLogo from '../public/social/TwitchLogo.png';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
+import SpotifyLogo from '../public/social/SpotifyLogo.png';
+import TwitchLogo from '../public/social/TwitchLogo.png';
 
 const useStyles = makeStyles({
     Icon: {
@@ -26,7 +27,6 @@ const useStyles = makeStyles({
 });
 
 const SideDrawer = () => {
-
     const classes = useStyles();
 
     const socialItems = [

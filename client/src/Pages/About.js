@@ -1,9 +1,11 @@
 import React from 'react';
-import {Typography, Grid} from '@material-ui/core';
-import {makeStyles} from '@material-ui/core/styles';
+
+import { Typography, Grid } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
 import RenzoLogoBig from '../public/assets/RenzoLogoBig.png';
 import RenzoGlogoBig from '../public/assets/RenzoGlogoBig.png';
-import extClasses from './About.module.css';
+import extClasses from '../css/About.module.css';
 
 const useStyles = makeStyles((theme) => ({
     AboutTitle: {

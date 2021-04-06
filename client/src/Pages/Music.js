@@ -1,18 +1,18 @@
 import React from 'react';
-import {albums} from '../Constants.js';
+
+import { Typography, Grid, Link, Hidden, Paper } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import {Typography, Grid, Link, Hidden, Paper} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableRow from '@material-ui/core/TableRow';
-import extClasses from './Music.module.css';
+import { makeStyles } from '@material-ui/core/styles';
 
-
+import { albums } from '../Constants.js';
+import extClasses from '../css/Music.module.css';
 
 const useStyles = makeStyles((theme) => ({
     Card: {
@@ -76,7 +76,6 @@ const useStyles = makeStyles((theme) => ({
         }
     }
 }));
-
 
 const Music = () => {
     const classes = useStyles();
