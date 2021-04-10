@@ -88,6 +88,7 @@ const Home = (props) => {
         if (!validateEmail(email)) {
             console.log('email is not valid!');
             setEmailError(true);
+            setLoading(false);
             return;
         };
 

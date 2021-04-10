@@ -1,3 +1,4 @@
+import Nauseous from './public/albums/Nauseous.jpg';
 import KabukiPunk from './public/albums/KabukiPunk.png';
 import Josuburbn from './public/albums/Josuburbn.png';
 import BANAR15 from './public/albums/BANAR15.png';
@@ -42,7 +43,7 @@ const albums = [
     {
         title: 'Nauseous',
         musicType: 'Single',
-        image: '',
+        image: Nauseous,
         tracks: [
             'Nauseous',
         ],
