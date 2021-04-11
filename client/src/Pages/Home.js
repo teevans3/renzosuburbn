@@ -96,24 +96,15 @@ const Home = (props) => {
             email: email
         })
         .then(res => {
-          res.text()
-            .then(data => {
-                // TODO
-                console.log("Email submitted for subscription");
-                setLoading(false);
-            })
-            .catch(err => {
-              // TODO
-              props.setError(true);
-              setLoading(false);
-              console.log(err);
-            })
+            // TODO
+            console.log("Email submitted for subscription");
+            setLoading(false);
         })
         .catch(err => {
-          // TODO
-          props.setError(true);
-          setLoading(false);
-          console.log(err);
+            // TODO
+            props.setError(true);
+            setLoading(false);
+            console.log(err);
         })
         props.setDisplaySubscribe(false);
         setDisplaySubscribeForm(false);

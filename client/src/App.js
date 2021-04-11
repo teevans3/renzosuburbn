@@ -72,6 +72,7 @@ function App() {
   useEffect(() => {
     axios.post('/api/v1/postTwitch')
     .then(data => {
+        console.log(data);
         if (data === 'is live') {
           setIsLive(true);
         } else {
