@@ -10,6 +10,7 @@ import axios from 'axios';
 
 import About from './About';
 import Error from '../UI/Error/Error';
+import Success from '../UI/Success/Success';
 import Loader from '../UI/Loader/Loader';
 import {newMusic} from '../Constants';
 import {validateEmail} from '../helpers';
@@ -60,8 +61,9 @@ const useStyles = makeStyles(theme => ({
 
 const Home = (props) => {
     const [displaySubscribeForm, setDisplaySubscribeForm] = useState(false);
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
     const [emailError, setEmailError] = useState(false);
+    // const [emailSuccess, setEmailSuccess] = useState(false);
 
     const classes = useStyles();
 
@@ -82,28 +84,29 @@ const Home = (props) => {
     async function submitEmail(e) {
 
         e.preventDefault();
-        setLoading(true);
+        // setLoading(true);
 
         const email = document.getElementById('email').value;
         if (!validateEmail(email)) {
             console.log('email is not valid!');
-            setEmailError(true);
-            setLoading(false);
+            // setEmailError(true);
+            // setLoading(false);
             return;
         };
 
         axios.post('/api/v1/postEmail', {
             email: email
         })
-        .then(res => {
+        .then(() => {
             // TODO
             console.log("Email submitted for subscription");
-            setLoading(false);
+            // setLoading(false);
+            // props.setSuccess(true);
         })
         .catch(err => {
             // TODO
-            props.setError(true);
-            setLoading(false);
+            // props.setError(true);
+            // setLoading(false);
             console.log(err);
         })
         props.setDisplaySubscribe(false);
@@ -130,7 +133,7 @@ const Home = (props) => {
     return (
         <div>
             <Grid container>
-                {loading ? <Loader /> : null}
+                {/* {loading ? <Loader /> : null} */}
                 <Grid item sm={12}>
                     <a href={newMusic.link} target="_blank" rel="noopener noreferrer">
                         <img src={NauseousSingleLogo} alt={`"${newMusic.title.toUpperCase()}"`} className={classes.SingleLogo}></img>
@@ -155,7 +158,7 @@ const Home = (props) => {
                                 label="Email Address"
                                 type="email"
                                 fullWidth
-                                error={emailError}
+                                // error={emailError}
                                 helperText={emailError ? "Enter a valid email address." : null}
                                 variant="outlined"
                                 className={classes.EmailInput}
@@ -165,6 +168,7 @@ const Home = (props) => {
                     </DialogContent>
                 </Dialog>
                 {props.error ? <Error setError={props.setError} /> : null}
+                {props.success ? <Success setSuccess={props.setSuccess} /> : null}
                 <Grid container>
                     <img className={extClasses.Globe} src={Globe} alt="Renzo Globe Logo"></img>
                 </Grid>

@@ -51,12 +51,14 @@ const useStyles = makeStyles({
 });
 
 function App() {
+  // not using error and loading components until api problem is fixed...
   const [firstTime, setFirstTime] = useState(true);
   const [isLive, setIsLive] = useState(false);
   const [displayEnter, setDisplayEnter] = useState(false);
   const [displaySubscribe, setDisplaySubscribe] = useState(true);
-  const [error, setError] = useState(false);
-
+  // const [error, setError] = useState(false);
+  // const [success, setSuccess] = useState(false);
+  
   const theme = useTheme();
   const classes = useStyles(theme);
 
@@ -100,7 +102,7 @@ function App() {
               <Route path="/press" component={Press} />
               <Route path="/#about" component={Home} />
               <Route path="/" render={() => (
-                  <Home displaySubscribe={displaySubscribe} setDisplaySubscribe={() => setDisplaySubscribe()} error={error} setError={setError}/>
+                  <Home displaySubscribe={displaySubscribe} setDisplaySubscribe={() => setDisplaySubscribe()} />
               )}/>
             </Switch>
           </BrowserRouter>

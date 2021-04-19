@@ -29,6 +29,7 @@ import RenzoSuburbnLogoSticker from './public/merch/RenzoSuburbnLogoSticker.png'
 import RSSmileySticker from './public/merch/RSSmileySticker.png';
 import TechnicianRenzo from './public/articles/TechnicianRenzo.png';
 import TechnicianDotwav from './public/articles/TechnicianDotwav.png';
+import VentsRenzo from './public/articles/VentsRenzo.png';
 
 
 
@@ -338,6 +339,34 @@ const videos = [
 ]
 
 const articles = [
+    {
+        title: 'Renzo Suburbn unleashes new track \'Nauseous\'',
+        link: 'https://ventsmagazine.com/2021/04/14/renzo-suburbn-unleashes-new-track-nauseous/',
+        publishDate: new Date(2021, 4, 14),
+        publisher: 'Vents Magazine',
+        image: VentsRenzo
+    },
+    {
+        title: 'Renzo Suburbn returns with brand new track \'Nauseous\'',
+        link: 'https://www.musiccrowns.org/new-music/renzo-suburbn-returns-with-brand-new-track-nauseous/',
+        publishDate: new Date(2021, 4, 14),
+        publisher: 'Music Crowns',
+        image: VentsRenzo   
+    },
+    {
+        title: 'New Music Discovery - 12.04.21',
+        link: 'http://mysticsons.com/article/new-music-discovery-120421#.YH4S2ZNKh6T',
+        publishDate: new Date(2021, 4, 12),
+        publisher: 'Mystic Sons',
+        image: null
+    },
+    {
+        title: 'Renzo Suburbn unleashes new track \'Nauseous\'',
+        link: 'https://www.thelinkup.com/content/4102/renzo-suburbn-unleashes-new-track-nauseous',
+        publishDate: new Date(2021, 4, 11),
+        publisher: 'Link Up TV',
+        image: VentsRenzo
+    },
     {
         title: 'NC State student artist debuts solo music',
         link: 'http://www.technicianonline.com/arts_entertainment/article_39e87e26-069c-11ea-a54b-9f2a5d5a6578.html',

@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.ae5598ed.chunk.css",
-    "main.js": "/static/js/main.42c5076e.chunk.js",
-    "main.js.map": "/static/js/main.42c5076e.chunk.js.map",
+    "main.js": "/static/js/main.29866077.chunk.js",
+    "main.js.map": "/static/js/main.29866077.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.da529e87.js",
     "runtime-main.js.map": "/static/js/runtime-main.da529e87.js.map",
-    "static/js/2.bdff5b97.chunk.js": "/static/js/2.bdff5b97.chunk.js",
-    "static/js/2.bdff5b97.chunk.js.map": "/static/js/2.bdff5b97.chunk.js.map",
+    "static/js/2.094230f0.chunk.js": "/static/js/2.094230f0.chunk.js",
+    "static/js/2.094230f0.chunk.js.map": "/static/js/2.094230f0.chunk.js.map",
     "static/js/3.cb851a62.chunk.js": "/static/js/3.cb851a62.chunk.js",
     "static/js/3.cb851a62.chunk.js.map": "/static/js/3.cb851a62.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.ae5598ed.chunk.css.map": "/static/css/main.ae5598ed.chunk.css.map",
-    "static/js/2.bdff5b97.chunk.js.LICENSE.txt": "/static/js/2.bdff5b97.chunk.js.LICENSE.txt",
+    "static/js/2.094230f0.chunk.js.LICENSE.txt": "/static/js/2.094230f0.chunk.js.LICENSE.txt",
     "static/media/AggyJargon.c33d7fdc.png": "/static/media/AggyJargon.c33d7fdc.png",
     "static/media/BANAR15.fffb4f43.png": "/static/media/BANAR15.fffb4f43.png",
     "static/media/CheckerBoard.b956d60e.jpg": "/static/media/CheckerBoard.b956d60e.jpg",
@@ -29,6 +29,7 @@
     "static/media/KnowYouDont.e0ac83f0.png": "/static/media/KnowYouDont.e0ac83f0.png",
     "static/media/MonstersUnderTheBedSticker.ebf930be.png": "/static/media/MonstersUnderTheBedSticker.ebf930be.png",
     "static/media/Mosh.cced9194.png": "/static/media/Mosh.cced9194.png",
+    "static/media/Nauseous.895b513b.jpg": "/static/media/Nauseous.895b513b.jpg",
     "static/media/NauseousSingleLogo.fd4b9f7f.png": "/static/media/NauseousSingleLogo.fd4b9f7f.png",
     "static/media/NauseousSodaSticker.aacfb687.png": "/static/media/NauseousSodaSticker.aacfb687.png",
     "static/media/Nightmare.7583fda3.png": "/static/media/Nightmare.7583fda3.png",
@@ -54,12 +55,13 @@
     "static/media/TechnicianDotwav.e728c9d8.png": "/static/media/TechnicianDotwav.e728c9d8.png",
     "static/media/TechnicianRenzo.4ea627b9.png": "/static/media/TechnicianRenzo.4ea627b9.png",
     "static/media/TextBox.9c13c1aa.png": "/static/media/TextBox.9c13c1aa.png",
+    "static/media/VentsRenzo.8ff3208d.png": "/static/media/VentsRenzo.8ff3208d.png",
     "static/media/Visualizer.651d34ef.mp4": "/static/media/Visualizer.651d34ef.mp4"
   },
   "entrypoints": [
     "static/js/runtime-main.da529e87.js",
-    "static/js/2.bdff5b97.chunk.js",
+    "static/js/2.094230f0.chunk.js",
     "static/css/main.ae5598ed.chunk.css",
-    "static/js/main.42c5076e.chunk.js"
+    "static/js/main.29866077.chunk.js"
   ]
 }
