@@ -1,3 +1,3 @@
-# test-website
+# renzosuburbn
 
-Creating a test github repository for an updated version of Renzo Suburbn website. This will include a node.js backend and will eventually be hosted on heroku.
+Website created for local artist Renzo Suburbn, made with React and Material UI. Site live at [renzosuburbn.com](https://renzosuburbn.com)
